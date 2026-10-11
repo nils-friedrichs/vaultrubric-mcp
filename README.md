@@ -1,5 +1,9 @@
 # VaultRubric MCP server
 
+[![smithery badge](https://smithery.ai/badge/lawsoncs1420/vaultrubric)](https://smithery.ai/servers/lawsoncs1420/vaultrubric)
+
+<img src="https://vaultrubric.com/icon.png" alt="VaultRubric" width="64">
+
 Free, public, **read-only** [Model Context Protocol](https://modelcontextprotocol.io) server for [VaultRubric](https://vaultrubric.com). VaultRubric publishes evidence-based comparisons of where to keep money: crypto exchanges, hardware and software wallets, high-yield savings accounts, and brokerages/IRAs.
 
 - **Endpoint:** `https://vaultrubric.com/mcp` (Streamable HTTP, JSON-RPC over POST)
@@ -16,11 +20,11 @@ The server is hosted by VaultRubric, so there is nothing to install. This repo o
 | `list_categories` | Categories and platform counts |
 | `search_platforms(query, category)` | Matching platforms with score and data coverage |
 | `get_platform(name)` | Sourced facts, per-criterion scores with basis and source URLs, incidents, as-of dates |
-| `compare(platforms, weights)` | 2–6 platforms in one category with optional 0–10 weights. Applies the 75% coverage gate, the 60% hack cap and the too-close-to-call (<3 pts) rule |
+| `compare_platforms(platforms, weights)` | 2–6 platforms in one category with optional 0–10 weights. Applies the 75% coverage gate, the 60% hack cap and the too-close-to-call (<3 pts) rule |
 | `get_verdict(slug)` | Published answer for a comparison page, e.g. `coinbase-vs-kraken` |
-| `is_safe(platform)` | Customer-funds hacks, incidents, regulatory actions, security score, with sources |
+| `check_platform_safety(platform)` | Customer-funds hacks, incidents, regulatory actions, security score, with sources |
 
-Every response includes `"attribution": "Source: VaultRubric (vaultrubric.com)"` and the relevant page URLs. Scoring rules: https://vaultrubric.com/methodology
+Older names `compare` and `is_safe` still work as aliases. Every tool declares an `outputSchema` and returns matching `structuredContent`. Every response includes `"attribution": "Source: VaultRubric (vaultrubric.com)"` and the relevant page URLs. Scoring rules: https://vaultrubric.com/methodology
 
 ## Connect
 
@@ -37,7 +41,7 @@ Every response includes `"attribution": "Source: VaultRubric (vaultrubric.com)"`
 
 ```bash
 curl -s https://vaultrubric.com/mcp -H 'Content-Type: application/json' \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"is_safe","arguments":{"platform":"Coinbase"}}}'
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"check_platform_safety","arguments":{"platform":"Coinbase"}}}'
 ```
 
 ## License and attribution
