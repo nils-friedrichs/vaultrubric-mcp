@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.vaultrubric/vaultrubric",
+  "title": "VaultRubric",
+  "description": "Sourced, scored comparisons of crypto exchanges, wallets, savings accounts and brokerages.",
+  "version": "1.0.0",
+  "websiteUrl": "https://vaultrubric.com/developers",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://vaultrubric.com/mcp"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/lawsoncs1420-droid/vaultrubric-mcp",
+    "source": "github"
+  }
+}

@@ -1,0 +1,13 @@
+VaultRubric Data Terms
+
+Copyright (c) 2026 VaultRubric (vaultrubric.com)
+
+The data and responses served by the VaultRubric MCP server (https://vaultrubric.com/mcp), its REST API and open data files may be used, copied, cited and redistributed, including commercially, provided that:
+
+1. Attribution is given as "Source: VaultRubric (vaultrubric.com)", with a link to vaultrubric.com or the specific page or data file used, wherever the data is displayed or substantially reused.
+2. You do not state or imply that VaultRubric endorses you or your product.
+3. You preserve as-of dates when presenting facts or scores.
+
+The data is provided "as is", without warranty of any kind, and is for informational purposes only. It is not investment, tax or legal advice. VaultRubric is not liable for any loss arising from its use. Access is rate-limited and may change or be withdrawn.
+
+The files in this repository (README and metadata) are available under the same terms. No VaultRubric application code is licensed by this repository.

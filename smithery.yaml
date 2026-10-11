@@ -1,0 +1,3 @@
+# Remote (hosted) server: no build or start command; clients connect directly over Streamable HTTP.
+runtime: "remote"
+url: "https://vaultrubric.com/mcp"
